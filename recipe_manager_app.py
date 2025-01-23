@@ -1,14 +1,10 @@
 recipes = {
-    1: {
-        "name": "name of dish",
-        "type": "type of cusing",
-        "desc": "description of dish",
-    },
-    2: {
-        "name": "name of dish",
-        "type": "type of cusing",
-        "desc": "description of dish",
-    }
+    #  Demo format of storing recipes
+    # 1: {
+    #     "name": "name of dish",
+    #     "type": "type of cusing",
+    #     "desc": "description of dish",
+    # },
 }
 id = 0
 
