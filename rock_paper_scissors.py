@@ -12,23 +12,23 @@ def determine_winner(user_choice, computer_choice, user_point, computer_point):
     if user_choice == computer_choice:
         print("It's a tie")
     elif user_choice == "Rock" and computer_choice == "Paper":
-        print("Computer wins! Paper covers Rock")
         computer_point += 1
+        print(f"Computer wins! Paper covers Rock, Score Computer {computer_point} User {user_point}")
     elif user_choice == "Paper" and computer_choice == "Rock":
-        print("User wins! Paper covers Rock")
         user_point += 1
+        print(f"User wins! Paper covers Rock, Score Computer {computer_point} User {user_point}")
     elif user_choice == "Rock" and computer_choice == "Scissor":
-        print("User wins! Rock crushes Scissor")
         user_point += 1
+        print(f"User wins! Rock crushes Scissor, Computer {computer_point} User {user_point}")
     elif user_choice == "Scissor" and computer_choice == "Rock":
-        print("Computer wins! Rock crushes Scissor")
         computer_point += 1
+        print(f"Computer wins! Rock crushes Scissor, Computer {computer_point} User {user_point}")
     elif user_choice == "Paper" and computer_choice == "Scissor":
-        print("Computer wins! Scissor cuts Paper")
         computer_point += 1
+        print(f"Computer wins! Scissor cuts Paper, Computer {computer_point} User {user_point}")
     elif user_choice == "Scissor" and computer_choice == "Paper":
-        print("User wins! Scissor cuts Paper")
         user_point += 1
+        print(f"User wins! Scissor cuts Paper, Computer {computer_point} User {user_point}")
 
     return user_point, computer_point
 
@@ -46,13 +46,15 @@ def main():
     computer_points = 0
 
     print("Welcome to the Rock, Paper, and Scissor game.")
-
+    game_round = 0
     while True:
 
+        game_round += 1
         for index, value in options.items():
             print(f"{index}. {value}")
 
         try:
+            print(f"Round {game_round}")
             user_input = int(input("Enter your choice (1-3): "))
             if user_input not in options:
                 print("Invalid choice! Please select a valid option.")
@@ -68,10 +70,10 @@ def main():
                 user_choice, computer_choice, user_points, computer_points)
 
             if user_points == 5:
-                print(f"User wins the game by {user_points}-{computer_points}!")
+                print(f"User wins the game by {user_points}-{computer_points} in {game_round} rounds!")
                 break
             elif computer_points == 5:
-                print(f"Computer wins the game by {computer_points}-{user_points}!")
+                print(f"Computer wins the game by {computer_points}-{user_points} in {game_round} rounds!")
                 break
 
             # print(result)
